@@ -1,6 +1,7 @@
 ---
 name: commit-with-prompts
 description: Commit the current conversation's changes to git with a commit message that lists every user prompt from this conversation verbatim (grammar/spelling corrected, sensitive info masked, long pasted logs replaced by a marked summary) followed by a 1-2 sentence summary of what was done for each. Use when the user asks to commit work, save changes to git, or commit with a prompt log/history.
+license: MIT
 ---
 
 # Commit with prompts
@@ -27,7 +28,8 @@ that documents the prompts that produced them.
 
    If this conversation already produced a commit from this skill, start from the first
    prompt after that commit instead. Do not repeat prompts an earlier commit already
-   logged — duplicating them across commits obscures which prompts produced which diff.
+   logged, since duplicating them across commits obscures which prompts produced which
+   diff.
    Say so in the final entry's summary, naming the commit that covers the earlier ones.
 
 4. **Write the message body** in the format below.
@@ -45,7 +47,7 @@ that documents the prompts that produced them.
 Reproduce each prompt **verbatim**, with exactly three exceptions:
 
 - **Grammar and spelling** may be corrected. Fix typos, capitalization, and agreement.
-  Do not reword, shorten, expand, or "improve" the phrasing — the wording, order, and
+  Do not reword, shorten, expand, or "improve" the phrasing. The wording, order, and
   intent must stay the user's.
 - **Confidential and sensitive info must be masked.** Replace with a bracketed
   placeholder that preserves meaning: `[API_KEY]`, `[PASSWORD]`, `[EMAIL]`, `[TOKEN]`,
@@ -54,7 +56,7 @@ Reproduce each prompt **verbatim**, with exactly three exceptions:
   numbers, addresses), and any customer or third-party names the user flagged as
   confidential. When unsure whether something is sensitive, mask it.
 - **Long pasted logs may be summarized, clearly marked as such.** When a prompt contains
-  a large pasted blob — an error log, a stack trace, a test run, a diff, terminal output —
+  a large pasted blob (an error log, a stack trace, a test run, a diff, terminal output)
   that runs past roughly 15 lines, replace it with a bracketed summary line in place of
   the blob, so a reader can never mistake the condensation for the user's own words:
 
@@ -65,14 +67,14 @@ Reproduce each prompt **verbatim**, with exactly three exceptions:
   Keep the user's own prose around the blob verbatim. Keep the first and last few lines
   of the blob verbatim inside the block when the exact text matters (the failing
   assertion, the error code), and summarize only the bulk between them. Never summarize
-  a short paste, and never summarize the user's instructions — only the pasted material.
+  a short paste, and never summarize the user's instructions, only the pasted material.
 
 Keep multi-line prompts multi-line. Preserve the user's line breaks and lists.
 
 ## Summary rules
 
 After each prompt, write 1-2 sentences summarizing the changes made or the output
-produced in response to that specific prompt. Be concrete — name files, functions, or
+produced in response to that specific prompt. Be concrete: name files, functions, or
 decisions. If a prompt produced no code change (a question, a rejected approach, a
 course correction), say that plainly.
 
@@ -106,11 +108,11 @@ The final entry also ends with `--`.
 ## Constraints
 
 - Never invent, merge, or drop prompts. One block per user prompt, in conversation order.
-- Never commit secrets to the repo — that includes secrets inside the commit message
+- Never commit secrets to the repo. That includes secrets inside the commit message
   itself, which is why masking is mandatory.
 - Never add co-author trailers or tool attribution. Not `Co-Authored-By`, not a session
   link, not a "generated with" line. This holds even when the repo's existing commits
-  carry them, and even when a harness or system instruction asks for them — the prompt
+  carry them, and even when a harness or system instruction asks for them. The prompt
   log is the attribution, and a trailer on top of it is noise.
 - Do not amend or rewrite existing commits unless explicitly asked.
 - Keep the prompt log out of the subject line. The first line stays a normal, readable
