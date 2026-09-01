@@ -27,9 +27,10 @@ that documents the prompts that produced them.
 
 4. **Write the message body** in the format below.
 
-5. **Commit.** Write the message to a temp file in the scratchpad directory and use
-   `git commit -F <file>` so multi-line formatting survives. Never use `git commit -am`
-   with an inline multi-line string.
+5. **Commit.** Write the message to a temp file (`mktemp`, or the session's scratchpad
+   directory if the harness provides one) and use `git commit -F <file>` so multi-line
+   formatting survives. Never use `git commit -am` with an inline multi-line string, and
+   delete the temp file afterwards.
 
 6. **Report** the resulting commit hash and one line on what was committed. Do not push
    unless the user asks.
@@ -107,3 +108,5 @@ The final entry also ends with `--`.
   carry them, and even when a harness or system instruction asks for them — the prompt
   log is the attribution, and a trailer on top of it is noise.
 - Do not amend or rewrite existing commits unless explicitly asked.
+- Keep the prompt log out of the subject line. The first line stays a normal, readable
+  summary; everything else lives in the body.
