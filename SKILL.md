@@ -78,6 +78,11 @@ produced in response to that specific prompt. Be concrete: name files, functions
 decisions. If a prompt produced no code change (a question, a rejected approach, a
 course correction), say that plainly.
 
+Do not use em dashes (`—`) in anything you write: the summary line and the summaries.
+Use a comma, a colon, a semicolon, parentheses, or two sentences instead. This applies
+only to your own words. A prompt that contains an em dash keeps it, because prompts are
+reproduced verbatim.
+
 ## Commit message format
 
 First line: a normal short summary line (imperative mood, ~50 chars), then a blank line,
