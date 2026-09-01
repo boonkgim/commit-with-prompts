@@ -78,6 +78,11 @@ from a conversation that handled credentials.
 - The prompt log *is* the attribution — the skill deliberately adds no `Co-Authored-By`
   or tool-attribution trailers.
 
+## Author
+
+Built by **Khur Boon Kgim** — [boonkgim.com](https://boonkgim.com), where I write about
+practical AI for builders: AI agents, coding workflows, and shipping software.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
