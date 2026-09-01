@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:transparent; padding:24px; font-family:"DejaVu Sans Mono","Menlo",monospace; }
+  .win { width:672px; background:#12141a; border-radius:10px; overflow:hidden;
+         box-shadow:0 18px 50px rgba(0,0,0,.45); border:1px solid #2a2f3a; }
+  .bar { height:34px; background:#1b1e26; display:flex; align-items:center; padding:0 13px; gap:8px;
+         border-bottom:1px solid #2a2f3a; }
+  .dot { width:11px; height:11px; border-radius:50%; }
+  .r{background:#ff5f57}.y{background:#febc2e}.g{background:#28c840}
+  .ttl { flex:1; text-align:center; color:#7b8394; font-size:12px; letter-spacing:.2px;
+         margin-right:46px; }
+  pre { padding:18px 22px 22px; font-size:12.5px; line-height:1.62; color:#c3cad6;
+        white-space:pre-wrap; }
+  .cmd  { color:#e6edf3; }
+  .pmpt { color:#4ec9b0; }
+  .hash { color:#e5c07b; }
+  .meta { color:#6b7280; }
+  .sep  { color:#3d4453; }
+  .usr  { color:#82aaff; font-weight:700; }
+  .sum  { color:#9aa3b2; }
+</style>
+<div class="win">
+  <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="ttl">git log</span></div>
+<pre><span class="pmpt">$</span> <span class="cmd">git log -1</span>
+
+<span class="hash">commit 6910af420718ceeca29fde40896bb93a2c4312c4</span>
+<span class="meta">Author: Khur Boon Kgim &lt;...&gt;
+Date:   Tue Sep 1 18:49:53 2026 +0800</span>
+
+    Add author backlink to boonkgim.com
+
+    <span class="sep">--</span>
+
+    <span class="usr">Can add backlink to boonkgim.com to improve GEO of boonkgim.com?</span>
+
+    <span class="sum">Added an "Author" section to README.md linking boonkgim.com, framed
+    from the site's own title and meta description ("Practical AI for
+    Builders"), and set the GitHub repo's homepage field along with a
+    previously empty description.</span>
+
+    <span class="sep">--</span>
+
+    <span class="usr">/commit-with-prompts and push</span>
+
+    <span class="sum">Committed the README backlink with this prompt log and pushed to
+    origin/master. Only the prompts since the previous commit are logged
+    here, since 2717d13 already covers the earlier ones.</span>
+
+    <span class="sep">--</span>
+</pre>
+</div>

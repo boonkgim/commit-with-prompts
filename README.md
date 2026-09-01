@@ -6,31 +6,13 @@ A [Claude Code](https://claude.com/claude-code) skill that commits your work wit
 containing every prompt from the session — verbatim, in order, each followed by a one-line
 summary of what it changed:
 
-```
-Add rate limiting to the upload endpoint
+<p align="center">
+  <img src="docs/git-log.png" alt="git log showing a commit message that lists each prompt from the session, verbatim, with a one-line summary of what it changed" width="700">
+</p>
 
---
-
-add a rate limit to the upload endpoint, 10 per minute per user
-
-Added `RateLimiter` in src/middleware/rate_limit.py and wired it into the
-`/upload` route in src/api/routes.py.
-
---
-
-use redis instead of in-memory so it works across workers
-
-Swapped the in-memory counter for a Redis-backed sliding window; added
-`REDIS_URL` to config with a localhost default.
-
---
-```
-
-**This repo is written by the skill.** Every commit here is a real prompt log —
-[read the history](https://github.com/boonkgim/commit-with-prompts/commits/master) before
+**That is a real commit from this repo** — every commit here is written by the skill.
+[Read the history](https://github.com/boonkgim/commit-with-prompts/commits/master) before
 you install anything.
-
-<!-- TODO: screenshot of `git log` showing a prompt log, or a GIF of the skill running -->
 
 ## Why you would want this
 
