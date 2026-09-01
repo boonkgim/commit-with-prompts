@@ -25,6 +25,11 @@ that documents the prompts that produced them.
    - system reminders, hook output, and tool results
    - command/skill scaffolding the user did not type
 
+   If this conversation already produced a commit from this skill, start from the first
+   prompt after that commit instead. Do not repeat prompts an earlier commit already
+   logged — duplicating them across commits obscures which prompts produced which diff.
+   Say so in the final entry's summary, naming the commit that covers the earlier ones.
+
 4. **Write the message body** in the format below.
 
 5. **Commit.** Write the message to a temp file (`mktemp`, or the session's scratchpad
